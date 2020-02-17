@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import Node from "./node/node";
+import "./pathfinding.scss";
 
 const PathfindingVisualizer = props => {
   const [grid, setGrid] = useState([]);
@@ -12,7 +14,7 @@ const PathfindingVisualizer = props => {
       x,
       y,
       isStart: x === startX && y === startY,
-      isEnd: x == endX && y == endY,
+      isEnd: x === endX && y === endY,
       distance: Infinity,
       isVisited: false,
       weight: 1
@@ -48,7 +50,7 @@ const PathfindingVisualizer = props => {
                   weight
                 } = node;
                 return (
-                  <div
+                  <Node
                     key={nodeId}
                     x={x}
                     y={y}
@@ -56,7 +58,7 @@ const PathfindingVisualizer = props => {
                     isEnd={isEnd}
                     weight={weight}
                     isVisited={isVisited}
-                  ></div>
+                  ></Node>
                 );
               })}
             </div>
