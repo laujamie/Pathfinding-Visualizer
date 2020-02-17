@@ -35,6 +35,7 @@ const PathfindingVisualizer = props => {
 
   return (
     <React.Fragment>
+      <button>Visualize Djikstra's</button>
       <div className="grid">
         {grid.map((row, rowId) => {
           return (
