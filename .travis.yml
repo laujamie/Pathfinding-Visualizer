@@ -4,14 +4,15 @@ cache:
   directories:
     - node_modules
   script:
-    - npm test
+    - npm install
     - npm run build
 deploy:
   provider: pages
-  github_token: $GITHUB_TOKEN
+  github_token: $GH_TOKEN
   keep_history: true
   local_dir: build
   on:
     branch: master
 
 dist: bionic
+sudo: false
